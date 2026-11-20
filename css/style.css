@@ -209,7 +209,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("../assets/hero.jpg") center 45% / cover no-repeat;
+  background: url("../assets/facility.jpg") center 45% / cover no-repeat;
 }
 .hero-bg::after {
   content: "";
@@ -410,6 +410,38 @@ ul { margin: 0; padding: 0; list-style: none; }
   transform: rotate(45deg);
 }
 .section.dark .tick-list li { color: #c2d2e2; }
+
+/* Brochure photo grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.photo-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--orange);
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.photo-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #e9eef3;
+}
+.photo-card figcaption {
+  padding: 13px 14px;
+  font-family: var(--head);
+  font-size: 1rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--navy-800);
+}
 
 /* Split (text + image) */
 .split {
@@ -899,4 +931,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero-cta .btn { width: 100%; justify-content: center; }
   .page-hero .container { padding-top: 44px; padding-bottom: 44px; }
   .form-card { padding: 24px 20px; }
+}
+
+/* Photo grid responsive */
+.photo-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1080px) {
+  .photo-grid, .photo-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .photo-grid, .photo-grid-4 { grid-template-columns: 1fr; }
 }

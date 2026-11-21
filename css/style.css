@@ -209,7 +209,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url("../assets/facility.jpg") center 45% / cover no-repeat;
+  background: url("../assets/panel-pcc.jpg") center 45% / cover no-repeat;
 }
 .hero-bg::after {
   content: "";
@@ -433,6 +433,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   object-fit: cover;
   background: #e9eef3;
 }
+.photo-card-32 img { aspect-ratio: 3 / 2; }
 .photo-card figcaption {
   padding: 13px 14px;
   font-family: var(--head);
@@ -520,6 +521,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: relative;
 }
 .product-top svg { width: 54px; height: 54px; color: rgba(255, 255, 255, .92); }
+.product-top.has-photo { display: block; }
+.product-top.has-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.product-top.has-photo::after { display: none; }
 .product-top::after {
   content: "";
   position: absolute;
